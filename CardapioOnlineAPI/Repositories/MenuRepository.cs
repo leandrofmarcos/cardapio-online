@@ -31,5 +31,14 @@ namespace CardapioOnlineAPI.Repositories
             menuItemOld.Price = menuItem.Price;
             menuItemOld.ImageUrl = menuItem.ImageUrl;
         }
+
+        public void DeleteMenuItem(int id)
+        {
+            var existingItem = menuItems.FirstOrDefault(item => item.Id == id);
+            if (existingItem != null)
+            {
+                menuItems.Remove(existingItem);
+            }
+        }
     }
 }
