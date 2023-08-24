@@ -1,8 +1,8 @@
 ﻿using CardapioOnlineAPI.Entities;
 
-namespace CardapioOnlineAPI.Repositories
+namespace CardapioOnlineAPI.Repositories.Impl
 {
-    public class MenuRepository
+    public class MenuRepository : IMenuRepository
     {
         private static List<MenuItem> menuItems = new List<MenuItem>();
 

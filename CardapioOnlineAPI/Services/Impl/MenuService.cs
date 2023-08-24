@@ -3,13 +3,13 @@ using CardapioOnlineAPI.Entities;
 using CardapioOnlineAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CardapioOnlineAPI.Services
+namespace CardapioOnlineAPI.Services.Impl
 {
-    public class MenuService
+    public class MenuService : IMenuService
     {
-        private readonly MenuRepository _repository;
+        private readonly IMenuRepository _repository;
 
-        public MenuService(MenuRepository repository)
+        public MenuService(IMenuRepository repository)
         {
             _repository = repository;
         }
@@ -64,7 +64,7 @@ namespace CardapioOnlineAPI.Services
 
             if (file == null)
                 throw new Exception("Sua chamada esta errada, arquivo esta vazio");
-            
+
 
             string uploadsFolder = Path.Combine(@"C:\temp\upload");
             string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;

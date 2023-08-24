@@ -10,9 +10,9 @@ namespace CardapioOnlineAPI.Controllers
     [ApiController]
     public class MenuController : ControllerBase
     {
-        private readonly MenuService _service;
+        private readonly IMenuService _service;
 
-        public MenuController(MenuService menuService)
+        public MenuController(IMenuService menuService)
         {
             _service = menuService;
         }
